@@ -1,0 +1,31 @@
+Installation of MYSQL
+
+sudo apt update
+
+sudo apt install mysql-server
+
+sudo mysql_secure_installation
+
+sudo systemctl status mysql
+sudo systemctl start mysql
+
+
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+sudo systemctl restart mysql
+CREATE USER 'gitea'@'13.201.38.169' IDENTIFIED BY 'Gitea#123';
+
+
+CREATE DATABASE giteadb CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_unicode_ci';
+
+CREATE USER 'gitea'@'13.201.38.169' IDENTIFIED BY 'gitea123';
+
+
+CREATE USER 'gitea'@'localhost' IDENTIFIED BY 'Gitea@123';  -- Use a strong password
+
+GRANT ALL PRIVILEGES ON giteadb.* TO 'gitea'@'localhost';
+
+
+FLUSH PRIVILEGES;
+
